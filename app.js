@@ -102,7 +102,7 @@ class Asteroid {
         this.radius = 40 + Math.random() * 10;
         this.x = this.radius + Math.random() * (canvas.width - this.radius * 2);
         this.y = -this.radius;
-        this.speed = 1.5 + Math.random() * 2 + (currentLevel * 0.5); // 레벨별 속도 증가
+        this.speed = 3.0 + Math.random() * 2.5 + (currentLevel * 1.0); // 속도 대폭 증가
         this.word = word;
         this.isCorrect = isCorrect;
         this.color = '#cfd9df'; // 정답/오답 모두 동일한 색상으로 통일
@@ -338,7 +338,7 @@ function gameLoop(timestamp) {
 
     // 소행성 스폰
     spawnTimer += deltaTime;
-    const spawnRate = Math.max(800, 2000 - (currentLevel * 300)); // 레벨이 오를수록 스폰 주기 짧아짐
+    const spawnRate = Math.max(500, 1400 - (currentLevel * 300)); // 스폰 주기 더 짧게 (난이도 증가)
     if (spawnTimer > spawnRate) {
         spawnAsteroid();
         spawnTimer = 0;
