@@ -105,7 +105,7 @@ class Asteroid {
         this.speed = 1.5 + Math.random() * 2 + (currentLevel * 0.5); // 레벨별 속도 증가
         this.word = word;
         this.isCorrect = isCorrect;
-        this.color = isCorrect ? '#ffb347' : '#cfd9df';
+        this.color = '#cfd9df'; // 정답/오답 모두 동일한 색상으로 통일
         this.rotation = Math.random() * Math.PI * 2;
         this.rotationSpeed = (Math.random() - 0.5) * 0.05;
     }
