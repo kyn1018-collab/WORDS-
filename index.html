@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>스페이스 워드 슈팅</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1>🚀 스페이스 워드 슈팅 🚀</h1>
+            <p>우주선을 조종해서 정답 소행성을 맞춰보세요!</p>
+            <div class="level-buttons">
+                <button class="btn" onclick="startGame(1)">1단계: 반대말</button>
+                <button class="btn" onclick="startGame(2)">2단계: 포함하는 말</button>
+                <button class="btn" onclick="startGame(3)">3단계: 종합 문제</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <div id="ui-layer">
+                <div class="top-bar">
+                    <div id="score-display">점수: <span id="score">0</span></div>
+                    <div id="level-display">1단계</div>
+                    <div id="health-display">❤️ <span id="health">3</span></div>
+                </div>
+                <div id="mission-box">
+                    <div id="mission-condition">조건</div>
+                    <div id="mission-word">제시어</div>
+                </div>
+                <div id="feedback-msg"></div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+            
+            <!-- Mobile Controls Helper -->
+            <div id="controls-hint">화면을 터치해서 우주선을 움직이세요!</div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen hidden">
+            <h2>게임 종료!</h2>
+            <p>최종 점수: <span id="final-score">0</span>점</p>
+            <button class="btn" onclick="showStartScreen()">처음으로</button>
+        </div>
+    </div>
+
+    <!-- Audio Elements (Using synthesized beeps or generic audio) -->
+    <script src="app.js"></script>
+</body>
+</html>
